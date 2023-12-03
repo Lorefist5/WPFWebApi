@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Lorefist",
+  "classifications": [ "WPF", "MVVM", "ASP"],
+  "identity": "WPFWebApi",
+  "name": "Wpf with Dependency injection and web api",
+  "description": "Simplifies Dependency injection,MVVM and web api integration",
+  "shortName": "WPFWeb",
+  "sourceName": "WPFWebApi",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}

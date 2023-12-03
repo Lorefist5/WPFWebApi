@@ -1,0 +1,44 @@
+﻿<UserControl
+    x:Class="WPFWebApi.WPF.Components.UserInputs"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPFWebApi.WPF.Components"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="Inputs"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Viewbox MinWidth="1500" Stretch="Uniform">
+        <StackPanel Width="1000">
+            <TextBlock
+                Margin="5"
+                FontSize="20"
+                Style="{StaticResource InputLabel}"
+                Text="User name" />
+            <TextBox
+                IsEnabled="{Binding Enabled, ElementName=Inputs}"
+                Style="{StaticResource Input}"
+                Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock
+                Margin="5"
+                FontSize="20"
+                Style="{StaticResource InputLabel}"
+                Text="Email" />
+            <TextBox
+                IsEnabled="{Binding Enabled, ElementName=Inputs}"
+                Style="{StaticResource Input}"
+                Text="{Binding UserEmail, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock
+                Margin="5"
+                FontSize="20"
+                Style="{StaticResource InputLabel}"
+                Text="Password" />
+            <TextBox
+                IsEnabled="{Binding Enabled, ElementName=Inputs}"
+                Style="{StaticResource Input}"
+                Text="{Binding UserPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+    </Viewbox>
+</UserControl>

@@ -1,0 +1,6 @@
+@WPFWebApi.Web_HostAddress = http://localhost:5001
+
+GET {{WPFWebApi.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

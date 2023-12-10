@@ -21,7 +21,8 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 Command="{Binding NavigateToCreateUsers}"
-                Content="Create user" />
+                Content="Create user"
+                Style="{StaticResource PButton}" />
         </common:BackPageLayout.NavBarItems>
 
         <Grid Margin="10">

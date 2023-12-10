@@ -11,10 +11,52 @@
     mc:Ignorable="d">
 
     <Border
+        x:Name="OuterBorder"
         Margin="3"
-        Padding="10"
-        BorderBrush="{StaticResource PrimaryBorder}"
-        BorderThickness="1">
+        Padding="10">
+        <Border.Style>
+            <Style TargetType="Border">
+                <Setter Property="Background" Value="{StaticResource SectionBackgroundColor}" />
+                <Setter Property="BorderBrush" Value="{StaticResource PrimaryButton}" />
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="CornerRadius" Value="10" />
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="{StaticResource PrimaryHover}" />
+                        <Trigger.EnterActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ThicknessAnimation
+                                        Storyboard.TargetProperty="BorderThickness"
+                                        To="4"
+                                        Duration="0:0:0.2">
+                                        <ThicknessAnimation.EasingFunction>
+                                            <QuadraticEase EasingMode="EaseInOut" />
+                                        </ThicknessAnimation.EasingFunction>
+                                    </ThicknessAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.EnterActions>
+                        <Trigger.ExitActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ThicknessAnimation
+                                        Storyboard.TargetProperty="BorderThickness"
+                                        To="0"
+                                        Duration="0:0:0.2">
+                                        <ThicknessAnimation.EasingFunction>
+                                            <QuadraticEase EasingMode="EaseInOut" />
+                                        </ThicknessAnimation.EasingFunction>
+                                    </ThicknessAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </Trigger.ExitActions>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+
         <Border.InputBindings>
             <MouseBinding
                 Command="{Binding NavigateToDelete, ElementName=User}"
@@ -46,17 +88,6 @@
 
 
         </Grid>
-        <Border.Style>
-            <Style TargetType="Border">
-                <Setter Property="Background" Value="{StaticResource ThirdBackground}" />
-                <Setter Property="Cursor" Value="Hand" />
-                <Setter Property="CornerRadius" Value="10" />
-                <Style.Triggers>
-                    <Trigger Property="IsMouseOver" Value="True">
-                        <Setter Property="Background" Value="{StaticResource PrimaryHover}" />
-                    </Trigger>
-                </Style.Triggers>
-            </Style>
-        </Border.Style>
+
     </Border>
 </UserControl>

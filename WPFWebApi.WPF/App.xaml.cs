@@ -35,7 +35,8 @@ public partial class App : Application
         services.AddTransient<DeleteUserViewModel>();
         
         //Services
-
+        //Native Alerts
+        services.AddSingleton<IAlertService, AlertService>();
         //File system
         services.AddSingleton<IFileSystem, DesktopFileSystem>();
         //Server 
@@ -51,12 +52,7 @@ public partial class App : Application
         });
         //EF core
         services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("Data source=WPFWebApiDatabase.db"));
-        services.AddTransient<IUserRepository, UserRepositoryWeb>(provider =>
-        {
-            var client = provider.GetRequiredService<HttpClient>();
-            UserRepositoryWeb userRepositoryWeb = new UserRepositoryWeb(client, client.BaseAddress.ToString());
-            return userRepositoryWeb;
-        });
+        services.AddTransient<IUserRepository, UserRepositoryORM>();
 
         services.AddTransient<IUnitOfWork, UnitOfWorkORM>();
 

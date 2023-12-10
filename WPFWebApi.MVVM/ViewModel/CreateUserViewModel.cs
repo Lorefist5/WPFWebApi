@@ -12,14 +12,15 @@ public class CreateUserViewModel : UserViewModelBase
 
 
     public ICommand CreateUser { get; private set; }
-    public CreateUserViewModel(INavigationService navigationService, IUnitOfWork unitOfWork) : base(navigationService)
+    public CreateUserViewModel(INavigationService navigationService, IUnitOfWork unitOfWork, IAlertService alertService) : base(navigationService)
     {
         BackCommand = navigationService.NavigateToCommand<UsersViewModel>();
         CreateUser = new RelayCommand(async o =>
         {
             await unitOfWork.UserRepository.Add(this._user);
-            
+            unitOfWork.SaveChanges();
             navigationService.NavigateTo<UsersViewModel>();
+            alertService.PopUp("Deleted", $"{_user.Name} was created successfully!");
         }, o =>
         {
             return !string.IsNullOrEmpty(User.Email) && !string.IsNullOrEmpty(User.Name) && !string.IsNullOrEmpty(User.Password);

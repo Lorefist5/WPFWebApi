@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 using WPFWebApi.Data.Model;
 using WPFWebApi.Data.Repositories.Interfaces;
 
@@ -35,12 +36,6 @@ namespace WPFWebApi.Web.Controllers
         {
             _unitOfWork.UserRepository.Add(value);
             _unitOfWork.SaveChanges();
-        }
-
-        // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
         }
 
         // DELETE api/<UserController>/5

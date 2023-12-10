@@ -10,35 +10,68 @@
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <Viewbox MinWidth="1500" Stretch="Uniform">
-        <StackPanel Width="1000">
-            <TextBlock
-                Margin="5"
-                FontSize="20"
-                Style="{StaticResource InputLabel}"
-                Text="User name" />
-            <TextBox
-                IsEnabled="{Binding Enabled, ElementName=Inputs}"
-                Style="{StaticResource Input}"
-                Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock
-                Margin="5"
-                FontSize="20"
-                Style="{StaticResource InputLabel}"
-                Text="Email" />
-            <TextBox
-                IsEnabled="{Binding Enabled, ElementName=Inputs}"
-                Style="{StaticResource Input}"
-                Text="{Binding UserEmail, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock
-                Margin="5"
-                FontSize="20"
-                Style="{StaticResource InputLabel}"
-                Text="Password" />
-            <TextBox
-                IsEnabled="{Binding Enabled, ElementName=Inputs}"
-                Style="{StaticResource Input}"
-                Text="{Binding UserPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-        </StackPanel>
-    </Viewbox>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*" MinWidth="200" />
+            <ColumnDefinition Width="0.7*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="0,10,0,0"
+            VerticalAlignment="Center"
+            Style="{StaticResource InputLabel}"
+            Text="User name:" />
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="0,10,30,0"
+            VerticalAlignment="Center"
+            FontSize="25"
+            IsEnabled="{Binding Enabled, ElementName=Inputs}"
+            Style="{StaticResource Input}"
+            Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="0,20,0,0"
+            VerticalAlignment="Center"
+            Style="{StaticResource InputLabel}"
+            Text="Email:" />
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="0,10,30,0"
+            VerticalAlignment="Center"
+            FontSize="25"
+            IsEnabled="{Binding Enabled, ElementName=Inputs}"
+            Style="{StaticResource Input}"
+            Text="{Binding UserEmail, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="0,20,0,0"
+            VerticalAlignment="Center"
+            Style="{StaticResource InputLabel}"
+            Text="Password:" />
+
+        <TextBox
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="0,10,30,0"
+            VerticalAlignment="Center"
+            FontSize="25"
+            IsEnabled="{Binding Enabled, ElementName=Inputs}"
+            Style="{StaticResource Input}"
+            Text="{Binding UserPassword, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+    </Grid>
+
 </UserControl>

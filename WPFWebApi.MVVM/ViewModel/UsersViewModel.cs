@@ -17,7 +17,7 @@ public class UsersViewModel : ViewModelBase
 
     public ICommand NavigateToCreateUsers { get; private set; }
     public ICommand NavigateToDeleteUser { get; private set; }
-    public UsersViewModel(INavigationService navigationService, IUnitOfWork unitOfWork) : base(navigationService)
+    public UsersViewModel(INavigationService navigationService, IUnitOfWork unitOfWork, IAlertService alertService) : base(navigationService)
     {
         this.unitOfWork = unitOfWork;
 
@@ -26,7 +26,7 @@ public class UsersViewModel : ViewModelBase
         NavigateToDeleteUser = new RelayCommand(o =>
         {
             var selectedUser = o as User;
-            DeleteUserViewModel dl = new DeleteUserViewModel(navigationService, unitOfWork, selectedUser);
+            DeleteUserViewModel dl = new DeleteUserViewModel(navigationService, alertService, unitOfWork, selectedUser);
             navigationService.Navigate(dl);
 
         }, o => true);

@@ -16,7 +16,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{StaticResource PrimaryHover}" />
+                            <Setter Property="Background" Value="{StaticResource SecondaryBackground}" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Background" Value="{StaticResource DisabledPrimary}" />
@@ -26,6 +26,32 @@
             </Setter.Value>
         </Setter>
         <Setter Property="Background" Value="{StaticResource PrimaryBackground}" />
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}" />
+    </Style>
+
+    <Style x:Key="PButton" TargetType="Button">
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Padding="{TemplateBinding Padding}"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PrimaryHover}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource DisabledPrimary}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="{StaticResource PrimaryButton}" />
         <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}" />
     </Style>
 
@@ -143,5 +169,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+
 
 </ResourceDictionary>

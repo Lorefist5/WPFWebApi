@@ -18,9 +18,9 @@
                 Padding="10"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
-                BorderBrush="Black"
                 Command="{Binding CreateUser}"
-                Content="Add" />
+                Content="Add"
+                Style="{StaticResource PButton}" />
         </common:BackPageLayout.NavBarItems>
 
         <StackPanel Margin="10">

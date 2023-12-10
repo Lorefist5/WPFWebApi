@@ -2,48 +2,30 @@
 
 
 
+
     <Style x:Key="Input" TargetType="TextBox">
         <Setter Property="Background" Value="{StaticResource InputPrimaryBackground}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Foreground" Value="{StaticResource InputPrimaryTextColor}" />
-        <Setter Property="Width" Value="280px" />
-        <Setter Property="Height" Value="auto" />
-        <Setter Property="FontSize" Value="16" />
-        <Setter Property="Padding" Value="5px" />
-        <Setter Property="Margin" Value="5" />
-        <Setter Property="BorderBrush" Value="{StaticResource InputPrimaryBorder}" />
-        <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="Effect">
-            <Setter.Value>
-                <DropShadowEffect
-                    BlurRadius="3"
-                    ShadowDepth="3"
-                    Color="#A0A0A0" />
-            </Setter.Value>
-        </Setter>
+        <Setter Property="BorderThickness" Value="0,0,0,2" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Padding" Value="5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
                     <Border
-                        x:Name="OuterBorder"
+                        x:Name="border"
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="0.3"
-                        CornerRadius="3">
-                        <ScrollViewer
-                            x:Name="PART_ContentHost"
-                            FontFamily="Segoe UI"
-                            Foreground="{TemplateBinding Foreground}" />
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="2">
+                        <ScrollViewer x:Name="PART_ContentHost" />
+
                     </Border>
+
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Effect">
-                                <Setter.Value>
-                                    <DropShadowEffect
-                                        BlurRadius="5"
-                                        ShadowDepth="5"
-                                        Color="#A0A0A0" />
-                                </Setter.Value>
-                            </Setter>
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource PrimaryHover}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -52,4 +34,9 @@
     </Style>
 
 
+
 </ResourceDictionary>
+
+
+
+

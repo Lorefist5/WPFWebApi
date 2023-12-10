@@ -17,7 +17,8 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
                 Command="{Binding NavigateToUsers}"
-                Content="Go to Users" />
+                Content="Go to Users"
+                Style="{StaticResource PButton}" />
 
         </StackPanel>
     </common:MainpageLayout>

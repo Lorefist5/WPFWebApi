@@ -6,6 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:WPFWebApi.WPF"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:modalcontrol="clr-namespace:ModalControl;assembly=ModalControl"
+    xmlns:view="clr-namespace:WPFWebApi.WPF.View"
     Name="Window"
     Title="MainWindow"
     Width="800"
@@ -38,7 +40,7 @@
                 <TextBlock
                     Margin="10,0,0,0"
                     VerticalAlignment="Center"
-                    Foreground="White"
+                    Foreground="{StaticResource PrimaryTextColor}"
                     Text="WPFWebApi" />
                 <StackPanel
                     Margin="0,0,10,0"
@@ -73,6 +75,7 @@
                     <Button
                         Width="40"
                         Height="49"
+                        HorizontalAlignment="Right"
                         Click="CloseButton_Click"
                         Style="{StaticResource IconButtonDanger}">
                         <TextBlock

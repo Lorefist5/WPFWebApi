@@ -2,16 +2,22 @@
     <!--  Theme  -->
 
     <!--  Backgrounds  -->
-    <SolidColorBrush x:Key="PrimaryBackground">#1e90ff</SolidColorBrush>
-    <SolidColorBrush x:Key="SecondaryBackground">White</SolidColorBrush>
+    <SolidColorBrush x:Key="PrimaryBackground">#444446</SolidColorBrush>
+    <SolidColorBrush x:Key="SecondaryBackground">#323232</SolidColorBrush>
     <SolidColorBrush x:Key="ThirdBackground">#f5f5f5</SolidColorBrush>
-    <SolidColorBrush x:Key="InputPrimaryBackground">White</SolidColorBrush>
+    <SolidColorBrush x:Key="InputPrimaryBackground">#444446</SolidColorBrush>
+    <SolidColorBrush x:Key="PrimaryButton">#ac99ea</SolidColorBrush>
+    <SolidColorBrush x:Key="SectionBackgroundColor">#444446</SolidColorBrush>
+    <SolidColorBrush x:Key="PopUpPrimaryBackground">#2b2b2b</SolidColorBrush>
+    <SolidColorBrush x:Key="PopUpSecondayBackground">#202020</SolidColorBrush>
+    <SolidColorBrush x:Key="PopUpButtonBackground">#313131</SolidColorBrush>
+
     <!--  Text  -->
     <SolidColorBrush x:Key="PrimaryTextColor">#ffffff</SolidColorBrush>
-    <SolidColorBrush x:Key="SecondaryTextColor">Black</SolidColorBrush>
-    <SolidColorBrush x:Key="InputPrimaryTextColor">Black</SolidColorBrush>
+    <SolidColorBrush x:Key="SecondaryTextColor">White</SolidColorBrush>
+    <SolidColorBrush x:Key="InputPrimaryTextColor">White</SolidColorBrush>
     <!--  Hovers  -->
-    <SolidColorBrush x:Key="PrimaryHover">#32a4ff</SolidColorBrush>
+    <SolidColorBrush x:Key="PrimaryHover">#9885d6</SolidColorBrush>
     <SolidColorBrush x:Key="SecondaryHover">#ffffff</SolidColorBrush>
     <SolidColorBrush x:Key="CustomHover">#d2d4d3</SolidColorBrush>
     <SolidColorBrush x:Key="DangerHover">#f15746</SolidColorBrush>
@@ -29,6 +35,9 @@
     <SolidColorBrush x:Key="HamburgerPrimaryColor">#ffffff</SolidColorBrush>
     <SolidColorBrush x:Key="HamburgerPrimaryBackgroundColor">#375a7f</SolidColorBrush>
     <!--  Disabled  -->
-    <SolidColorBrush x:Key="DisabledPrimary">#1e86eb</SolidColorBrush>
+    <SolidColorBrush x:Key="DisabledPrimary">gray</SolidColorBrush>
     <SolidColorBrush x:Key="DisabledSecondary">#ffffff</SolidColorBrush>
+    <!--  Test  -->
+    <SolidColorBrush x:Key="AccentColor" Color="#3498db" />
+
 </ResourceDictionary>

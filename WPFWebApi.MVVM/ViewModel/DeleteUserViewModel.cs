@@ -16,7 +16,7 @@ public class DeleteUserViewModel : UserViewModelBase
 {
 
     public ICommand DeleteUser { get; private set; }
-    public DeleteUserViewModel(INavigationService navigationService, IUnitOfWork unitOfWork, User user) : base(navigationService)
+    public DeleteUserViewModel(INavigationService navigationService,IAlertService alertService, IUnitOfWork unitOfWork, User user) : base(navigationService)
     {
         User = user;
         BackCommand = navigationService.NavigateToCommand<UsersViewModel>();
@@ -24,8 +24,9 @@ public class DeleteUserViewModel : UserViewModelBase
         DeleteUser = new RelayCommand(async o =>
         {
             await unitOfWork.UserRepository.Delete(_user);
-
+            unitOfWork.SaveChanges();
             navigationService.NavigateTo<UsersViewModel>();
+            alertService.PopUp("Deleted", $"{_user.Name} was deleted successfully!");
         }, o => true);
     }
 }

@@ -20,7 +20,7 @@ public class CreateUserViewModel : UserViewModelBase
             await unitOfWork.UserRepository.Add(this._user);
             unitOfWork.SaveChanges();
             navigationService.NavigateTo<UsersViewModel>();
-            alertService.PopUp("Deleted", $"{_user.Name} was created successfully!");
+            alertService.PopUp("Created", $"{_user.Name} was created successfully!");
         }, o =>
         {
             return !string.IsNullOrEmpty(User.Email) && !string.IsNullOrEmpty(User.Name) && !string.IsNullOrEmpty(User.Password);
